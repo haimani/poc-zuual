@@ -1,0 +1,9 @@
+
+server:
+  port: 8082
+zuul:
+  routes:
+    member :
+      path: /m/**
+      url: http://localhost:8081/m
+debug: true
