@@ -1,9 +1,19 @@
 
 server:
-  port: 8082
+  port: 8080
 zuul:
   routes:
     member :
       path: /m/**
-      url: http://localhost:8081/m
+#      url: http://localhost:8081/m
+      serviceId: m-service
 debug: true
+
+
+ribbon:
+  eureka:
+    enabled: false
+
+m-service:
+  ribbon:
+    listOfServers: http://localhost:8081,http://localhost:8082
