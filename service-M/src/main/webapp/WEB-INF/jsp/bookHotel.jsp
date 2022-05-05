@@ -39,5 +39,28 @@
  </table>
 
 </form:form>
+
+<div>
+<font color="blue" size="8">${roomLimit}</font>
+</div>
+
+<div id="hotelList">
+<c:if test="${hotelList.size()>0}">
+ <table border="1">
+ <tr>
+ <th>Hotel Name</th><th>Hotel Location</th><th>Room No</th>
+ </tr>
+ <c:forEach items="${hotelList}" var="hotell">
+ <tr>
+ <td>${hotell.hotelName}</td><td>${hotell.location}</td><td>${hotell.roomNo}</td>
+ </tr>
+ </c:forEach>
+ 
+ </table>
+
+</c:if>
+</div>
+<div>${bookedMsg}</div>
+
 </body>
 </html>
